@@ -14,19 +14,28 @@ gem 'figaro'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
+# Authentication
 gem 'devise'
+# to user bootstrap_form
 gem 'bootstrap_form'
+# background process
+gem 'sidekiq', '~> 4'
+gem 'sidekiq-status'
+# Authorization
+gem 'cancancan', '~> 2.0'
+# start the background process with one command
+gem 'foreman'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+gem 'responders'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -55,18 +64,22 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-group :development, :test do
+group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  gem 'capybara' #, '>= 2.15'
+  gem 'capybara-email'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
   gem 'rspec-rails', '~> 3.6'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'database_cleaner'
+  gem 'rspec-sidekiq', github: 'philostler/rspec-sidekiq', branch: 'develop'
+  gem 'shoulda-matchers'
+  gem 'json-schema'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

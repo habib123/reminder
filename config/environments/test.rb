@@ -25,11 +25,13 @@ Rails.application.configure do
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
+  config.action_mailer.default_url_options = { host: ENV['HOST'] }
+
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
 
   # Store uploaded files on the local file system in a temporary directory
-  config.active_storage.service = :test
+  #config.active_storage.service = :test
 
   config.action_mailer.perform_caching = false
 
