@@ -77,7 +77,7 @@ group :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'database_cleaner'
-  gem 'rspec-sidekiq', github: 'philostler/rspec-sidekiq', branch: 'develop'
+  gem 'rspec-sidekiq'
   gem 'shoulda-matchers'
   gem 'json-schema'
 end
