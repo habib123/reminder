@@ -29,11 +29,10 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   #config.active_storage.service = :local
-
+  #config.routes.default_url_options[:host] = 'example.com'
   # Don't care if the mailer can't send.
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  #config.action_mailer.default_url_options[:host] = request.host_with_port
   config.action_mailer.default_url_options = { host: ENV['HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {

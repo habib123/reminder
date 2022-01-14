@@ -30,7 +30,6 @@ class RemindersController < ApplicationController
     respond_with @reminder
   end
 
-
   def destroy
     respond_with @reminder.destroy
   end

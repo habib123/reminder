@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  skip_before_action :verify_authenticity_token
   before_action :authenticate_user!
   rescue_from CanCan::AccessDenied, with: :redirect_to_unauthorize_access
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
